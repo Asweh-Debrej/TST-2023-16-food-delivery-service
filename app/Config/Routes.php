@@ -5,6 +5,6 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/', 'ListOrder::index');
 
-service('auth')->routes($routes);
+// service('auth')->routes($routes);
