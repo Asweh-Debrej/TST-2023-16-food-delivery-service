@@ -8,7 +8,7 @@ use App\Models\OrderModel;
 
 class OrderAssignmentModel extends Model
 {
-    protected $table            = 'orderassignments';
+    protected $table            = 'order_assignment';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
@@ -39,26 +39,12 @@ class OrderAssignmentModel extends Model
     protected $allowCallbacks = true;
     protected $beforeInsert   = [];
     protected $afterInsert    = [];
-    protected $beforeUpdate = ['updateStatus'];
+    protected $beforeUpdate = [];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
-
-    protected function updateStatus(array $data)
-    {
-        // Ambil data dari database berdasarkan primary key (id)
-        $assignment = $this->find($data['id']);
-
-        // Jika waktu sekarang melewati estimated_arrival
-        if (time() >= strtotime($assignment['estimated_arrival'])) {
-            // Perbarui status
-            $data['status'] = 'Arrived';
-        }
-
-        return $data;
-    }
 
     public function getStaff() {
         return $this->hasOne(StaffModel::class, 'id', 'staff_id');
