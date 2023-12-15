@@ -23,10 +23,6 @@ class Order extends Migration
                 'type' => 'DECIMAL',
                 'constraint' => '10,2',
             ],
-            'status' => [
-                'type' => 'VARCHAR',
-                'constraint' => 50,
-            ],
             'created_at' => [
                 'type' => 'DATETIME',
                 'null' => true,
