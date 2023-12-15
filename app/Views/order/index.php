@@ -20,12 +20,12 @@
         <tbody>
           <?php foreach ($order as $o) : ?>
             <tr>
-              <td><?= $o['order_id']; ?></td>
+              <td><?= $o['id']; ?></td>
               <td><?= $o['customer_name']; ?></td>
               <td>Rp.<?= $o['total_amount']; ?></td>
               <td><?= $o['status']; ?></td>
               <td>
-                <a href="/order/detail/<?= $o['order_id']; ?>" class="btn btn-primary">Detail Order</a>
+                <a href="/order/<?= $o['id']; ?>" class="btn btn-primary">Detail Order</a>
               </td>
             </tr>
           <?php endforeach; ?>

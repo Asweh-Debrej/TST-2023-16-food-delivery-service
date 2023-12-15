@@ -11,7 +11,6 @@ class OrderSeeder extends Seeder
   {
     $data = [
       [
-        'order_id'      => 'ORD001',
         'customer_name' => 'Alice Johnson',
         'total_amount'  => '150.75',
         'status'        => 'Processing',
@@ -19,7 +18,6 @@ class OrderSeeder extends Seeder
         'updated_at'    => Time::now(),
       ],
       [
-        'order_id'      => 'ORD002',
         'customer_name' => 'Bob Smith',
         'total_amount'  => '200.50',
         'status'        => 'Shipped',
@@ -27,7 +25,6 @@ class OrderSeeder extends Seeder
         'updated_at'    => Time::now(),
       ],
       [
-        'order_id'      => 'ORD003',
         'customer_name' => 'Charlie Brown',
         'total_amount'  => '75.25',
         'status'        => 'Delivered',
@@ -35,7 +32,6 @@ class OrderSeeder extends Seeder
         'updated_at'    => Time::now(),
       ],
       [
-        'order_id'      => 'ORD004',
         'customer_name' => 'David Miller',
         'total_amount'  => '120.00',
         'status'        => 'Completed',
