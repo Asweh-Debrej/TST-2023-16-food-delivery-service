@@ -12,4 +12,6 @@ $routes->get('/', 'Redirect::order');
 
 $routes->resource('order');
 $routes->resource('staff');
-$routes->resource('order-assignment', ['controller' => 'OrderAssignment']);
+$routes->resource('assignment', ['controller' => 'OrderAssignment']);
+
+$routes->get('/api/assignment/(:num)', 'OrderAssignment::info/$1');

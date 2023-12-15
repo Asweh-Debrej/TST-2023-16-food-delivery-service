@@ -5,6 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use App\Models\StaffModel;
 use App\Models\OrderModel;
+use PHPUnit\Util\Json;
 
 class OrderAssignmentModel extends Model
 {
@@ -17,7 +18,6 @@ class OrderAssignmentModel extends Model
     protected $allowedFields    = [
         'order_id',
         'staff_id',
-        'status',
         'created_at',
         'estimated_arrival',
     ];
@@ -42,9 +42,31 @@ class OrderAssignmentModel extends Model
     protected $beforeUpdate = [];
     protected $afterUpdate    = [];
     protected $beforeFind     = [];
-    protected $afterFind      = [];
+    protected $afterFind      = ['setStatus'];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function setStatus($data) {
+        if (!isset($data['data']) || !isset($data['method']) || !isset($data['singleton'])) {
+            for ($i = 0; $i < count($data); $i++) {
+                if ($data[$i]['estimated_arrival'] < date('Y-m-d H:i:s')) {
+                    $data[$i]['status'] = 'Completed';
+                } else {
+                    $data[$i]['status'] = 'Delivering';
+                }
+                print_r($data[$i]);
+            }
+        } else {
+            if ($data['data']['estimated_arrival'] < date('Y-m-d H:i:s')) {
+                $data['data']['status'] = 'Completed';
+            } else {
+                $data['data']['status'] = 'Delivering';
+            }
+        }
+
+        return $data;
+    }
+
 
     public function getStaff() {
         return $this->hasOne(StaffModel::class, 'id', 'staff_id');
