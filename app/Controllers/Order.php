@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\OrderModel;
 
-class ListOrder extends BaseController
+class Order extends BaseController
 {
 
   protected $orderModel;
@@ -24,5 +24,17 @@ class ListOrder extends BaseController
 
 
     return view('order/index', $data);
+  }
+
+  public function show($id)
+  {
+    $order = $this->orderModel->find($id);
+
+    $data = [
+      'title' => 'Order Detail | Drinks Store',
+      'order' => $order
+    ];
+
+    return view('order/detail', $data);
   }
 }
