@@ -4,6 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 use Faker\Factory;
+use App\Models\OrderAssignmentModel;
 
 class StaffModel extends Model
 {
