@@ -5,12 +5,11 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'ListOrder::index');
+$routes->get('/', 'Redirect::order');
 
 // service('auth')->routes($routes);
 
-$routes->group('api', function ($routes) {
-    $routes->resource('order');
-    $routes->resource('staff');
-    $routes->resource('order-assignment', ['controller' => 'OrderAssignment']);
-});
+
+$routes->resource('order');
+$routes->resource('staff');
+$routes->resource('order-assignment', ['controller' => 'OrderAssignment']);
