@@ -10,8 +10,8 @@ $routes->get('/', 'Redirect::order');
 // service('auth')->routes($routes);
 
 
-$routes->resource('order');
-$routes->resource('staff');
-$routes->resource('assignment', ['controller' => 'OrderAssignment']);
+$routes->resource('order', ['only' => ['index', 'show']]);
+$routes->resource('assignment', ['controller' => 'OrderAssignment', 'only' => ['create']]);
 
-$routes->get('/api/assignment/(:num)', 'OrderAssignment::info/$1');
+$routes->get('/api/order/(:num)', 'OrderAssignment::info/$1');
+$routes->get('/api/order/(:num)/status', 'Order::getStatus/$1');
