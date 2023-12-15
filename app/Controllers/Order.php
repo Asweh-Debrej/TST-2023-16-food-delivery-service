@@ -30,6 +30,10 @@ class Order extends BaseController
   {
     $order = $this->orderModel->find($id);
 
+    if (!$order) {
+      throw new \CodeIgniter\Exceptions\PageNotFoundException('Order ID ' . $id . ' not found!');
+    }
+
     $data = [
       'title' => 'Order Detail | Drinks Store',
       'order' => $order
