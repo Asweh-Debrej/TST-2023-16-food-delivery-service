@@ -44,31 +44,6 @@ class StaffModel extends Model
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
 
-    public function getStaffs()
-    {
-        return $this->findAll();
-    }
-
-    public function getStaff($id)
-    {
-        return $this->find($id);
-    }
-
-    public function createStaff($data)
-    {
-        return $this->insert($data);
-    }
-
-    public function updateStaff($id, $data)
-    {
-        return $this->update($id, $data);
-    }
-
-    public function deleteStaff($id)
-    {
-        return $this->delete($id);
-    }
-
     public static function fake($count = 1)
     {
         $faker = Factory::create();
