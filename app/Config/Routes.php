@@ -13,5 +13,5 @@ $routes->get('/', 'Redirect::order');
 $routes->resource('order', ['only' => ['index', 'show']]);
 $routes->resource('assignment', ['controller' => 'OrderAssignment', 'only' => ['create']]);
 
-$routes->get('/api/order/(:num)', 'OrderAssignment::info/$1');
-$routes->get('/api/order/(:num)/status', 'Order::getStatus/$1');
+$routes->get('/api/order/(:num)', 'Order::apiGetSingle/$1');
+$routes->get('/api/order/(:num)/status', 'Order::apiGetStatus/$1');

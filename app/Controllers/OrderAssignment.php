@@ -48,31 +48,29 @@ class OrderAssignment extends BaseController
             throw new \CodeIgniter\Exceptions\ModelException('Estimated Arrival is not allowed');
         }
 
-        $staffModel = new StaffModel();
-        $staffs = $staffModel->findAll();
+        $orderId = $this->request->getJsonVar('order_id');
 
-        if (count($staffs) == 0) {
-            $staffs = $staffModel->fake();
+        $orderModel = new \App\Models\OrderModel();
+        $order = $orderModel->find($orderId);
+        if (!$order) {
+            return $this->response->setStatusCode(404)->setJSON([
+                'error' => 'Order ID ' . $orderId . ' not found',
+            ]);
         }
-
-        $staffIds = [];
-        foreach ($staffs as $staff) {
-            $staffIds[] = $staff['id'];
-        }
-
-        $staffId = array_rand($staffIds);
-
 
         $orderAssignmentModel = new OrderAssignmentModel();
 
-        $orderAssignment = $orderAssignmentModel->insert([
-            'order_id' => $this->request->getJsonVar('order_id'),
-            'staff_id' => $staffId,
-            'created_at' => date('Y-m-d H:i:s'),
-            'estimated_arrival' => date('Y-m-d H:i:s', strtotime('+10 minute')),
+        if ($orderAssignmentModel->findAssignmentByOrderId($orderId)) {
+            return $this->response->setStatusCode(400)->setJSON([
+                'error' => 'Order ID ' . $orderId . ' is already assigned',
+            ]);
+        }
+
+        $orderAssignment = $orderAssignmentModel->create([
+            'order_id' => $orderId,
         ]);
 
-        return $this->response->setJSON($orderAssignmentModel->find($orderAssignment));
+        return $this->response->setJSON($orderAssignment);
     }
 
     public function show($id) {
@@ -97,6 +95,7 @@ class OrderAssignment extends BaseController
             'id',
             'order_id',
             'status',
+            'staff',
             'estimated_arrival',
         ];
 

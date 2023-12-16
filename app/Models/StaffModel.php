@@ -64,4 +64,13 @@ class StaffModel extends Model
     public function getOrders() {
         return $this->hasMany(OrderAssignmentModel::class, 'staff_id', 'id');
     }
+
+    public function findStaff($id) {
+        $staff = $this->where('id', $id)->first();
+        if ($staff) {
+            return $staff;
+        } else {
+            return null;
+        }
+    }
 }
