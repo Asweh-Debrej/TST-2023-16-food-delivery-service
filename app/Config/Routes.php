@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Redirect::order');
 
-// service('auth')->routes($routes);
+service('auth')->routes($routes);
 
 
 $routes->resource('order', ['only' => ['index', 'show']]);
