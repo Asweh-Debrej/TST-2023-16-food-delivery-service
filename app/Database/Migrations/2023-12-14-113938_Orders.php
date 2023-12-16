@@ -27,6 +27,10 @@ class Order extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
+            'sender_name' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
+            ],
         ]);
 
         $this->forge->addKey('id', true);
