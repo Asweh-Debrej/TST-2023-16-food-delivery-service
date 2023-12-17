@@ -7,13 +7,14 @@
 <div class="container d-flex justify-content-center p-5">
     <div class="card col-12 col-md-5 shadow-sm">
         <div class="card-body">
-            <h5 class="card-title mb-5"><?= lang('Auth.useMagicLink') ?></h5>
+            <div class="container mt-5 mb-4">
+                <h2 class="card-title mb-3 text-center"><strong><?= lang('Auth.useMagicLink') ?></strong></h1>
 
-            <p><b><?= lang('Auth.checkYourEmail') ?></b></p>
+                    <p><b><?= lang('Auth.checkYourEmail') ?></b></p>
 
-            <p><?= lang('Auth.magicLinkDetails', [setting('Auth.magicLinkLifetime') / 60]) ?></p>
+                    <p><?= lang('Auth.magicLinkDetails', [setting('Auth.magicLinkLifetime') / 60]) ?></p>
+            </div>
         </div>
     </div>
-</div>
 
-<?= $this->endSection() ?>
+    <?= $this->endSection() ?>
