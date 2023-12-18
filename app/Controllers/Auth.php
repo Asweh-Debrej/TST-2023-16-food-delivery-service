@@ -30,7 +30,7 @@ class Auth extends BaseController {
         return $this->response->setJSON([
             'message' => 'Login successful',
             'data'   => [
-                'token' => $token,
+                'token' => $token->raw_token,
             ],
         ]);
     }
