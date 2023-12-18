@@ -106,7 +106,8 @@ class Order extends BaseController
 
     $data['total_amount'] = 5000; // hardcode total_amount
 
-    $order = $this->orderModel->insert($data);
+    $orderId = $this->orderModel->store($data);
+    $order = $this->orderModel->find($orderId);
 
     $data = [
       'message' => 'order successfully created',
