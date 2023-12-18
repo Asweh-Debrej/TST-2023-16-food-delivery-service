@@ -31,6 +31,14 @@ class Order extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],
+            'address' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
+            ],
+            'phone_number' => [
+                'type' => 'VARCHAR',
+                'constraint' => 100,
+            ],
         ]);
 
         $this->forge->addKey('id', true);

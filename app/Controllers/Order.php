@@ -84,4 +84,32 @@ class Order extends BaseController
 
     return $this->response->setJSON($data);
   }
+
+  public function apiCreate()
+  {
+    $data = $this->request->getJSON(true);
+
+    $validation = \Config\Services::validation();
+    $validation->setRules([
+      'recipient' => 'required',
+      'total_amount' => 'required|numeric',
+      'sender_name' => 'required',
+    ]);
+
+    if (!$validation->run($data)) {
+      return $this->response->setStatusCode(400)->setJSON([
+        'message' => 'Bad Request',
+        'error' => $validation->getErrors(),
+      ]);
+    }
+
+    $order = $this->orderModel->insert($data);
+
+    $data = [
+      'message' => 'order successfully created',
+      'data' => $order,
+    ];
+
+    return $this->response->setStatusCode(201)->setJSON($data);
+  }
 }

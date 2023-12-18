@@ -15,6 +15,9 @@
           <h5 class="card-text">Recipient:</h5>
           <p class="card-text"><?= $order['recipient']; ?></p>
 
+          <h5 class="card-text">Address:</h5>
+          <p class="card-text"><?= $order['address']; ?></p>
+
           <h5 class="card-text">Total Amount:</h5>
           <p class="card-text">Rp.<?= $order['total_amount']; ?></p>
 
@@ -27,6 +30,9 @@
 
           <h5 class="card-text">Sender:</h5>
           <p class="card-text"><?= $order['sender_name']; ?></p>
+
+          <h5 class="card-text">Phone Number:</h5>
+          <p class="card-text"><?= $order['phone_number']; ?></p>
 
           <h5 class="card-text">Created At:</h5>
           <p class="card-text"><?= $order['created_at']; ?></p>

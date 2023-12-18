@@ -13,6 +13,8 @@ class OrderModel extends Model {
     'recipient',
     'total_amount',
     'sender_name',
+    'address',
+    'phone_number',
   ];
 
   public function getDelivery() {
@@ -68,5 +70,10 @@ class OrderModel extends Model {
     }
 
     return $data;
+  }
+
+  public function store($data) {
+    $this->insert($data);
+    return $this->db->insertID();
   }
 }

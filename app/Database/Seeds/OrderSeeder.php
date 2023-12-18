@@ -14,25 +14,33 @@ class OrderSeeder extends Seeder
         'recipient' => 'Alice Johnson',
         'total_amount'  => '5000',
         'created_at'    => Time::now(),
-        'sender_name'   => 'JANJI JIWA'
+        'sender_name'   => 'JANJI JIWA',
+        'address'       => 'Jl. Jalan No. 1',
+        'phone_number'  => '081234567890',
       ],
       [
         'recipient' => 'Bob Smith',
         'total_amount'  => '5000',
         'created_at'    => Time::now(),
-        'sender_name'   => 'JANJI JIWA'
+        'sender_name'   => 'JANJI JIWA',
+        'address'       => 'Jl. Jalan No. 2',
+        'phone_number'  => '081234567890',
       ],
       [
         'recipient' => 'Charlie Brown',
         'total_amount'  => '5000',
         'created_at'    => Time::now(),
-        'sender_name'   => 'JANJI JIWA'
+        'sender_name'   => 'JANJI JIWA',
+        'address'       => 'Jl. Jalan No. 3',
+        'phone_number'  => '081234567890',
       ],
       [
         'recipient' => 'David Miller',
         'total_amount'  => '5000',
         'created_at'    => Time::now(),
-        'sender_name'   => 'JANJI JIWA'
+        'sender_name'   => 'JANJI JIWA',
+        'address'       => 'Jl. Jalan No. 4',
+        'phone_number'  => '081234567890',
       ],
     ];
 
