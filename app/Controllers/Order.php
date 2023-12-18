@@ -55,7 +55,7 @@ class Order extends BaseController
       ]);
     }
 
-    $userId = user_id();
+    $userId = strval(user_id());
     $order = $this->orderModel->find($id);
 
     if (!$order) {
@@ -86,7 +86,7 @@ class Order extends BaseController
       ]);
     }
 
-    $userId = user_id();
+    $userId = strval(user_id());
     $order = $this->orderModel->find($id);
 
     if (!$order) {
