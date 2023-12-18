@@ -93,6 +93,8 @@ class Order extends BaseController
     $validation->setRules([
       'recipient' => 'required',
       'sender' => 'required',
+      'address' => 'required',
+      'phone_number' => 'required|numeric',
     ]);
 
     if (!$validation->run($data)) {
