@@ -29,7 +29,7 @@
           <p class="card-text"><?= $order['status']; ?></p>
 
           <h5 class="card-text">Sender:</h5>
-          <p class="card-text"><?= $order['sender_name']; ?></p>
+          <p class="card-text"><?= $order['sender']; ?></p>
 
           <h5 class="card-text">Phone Number:</h5>
           <p class="card-text"><?= $order['phone_number']; ?></p>

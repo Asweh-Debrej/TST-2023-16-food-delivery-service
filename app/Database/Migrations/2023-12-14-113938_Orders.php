@@ -27,7 +27,7 @@ class Order extends Migration
                 'type' => 'DATETIME',
                 'null' => true,
             ],
-            'sender_name' => [
+            'sender' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],

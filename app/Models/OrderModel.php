@@ -12,7 +12,7 @@ class OrderModel extends Model {
   protected $allowedFields = [
     'recipient',
     'total_amount',
-    'sender_name',
+    'sender',
     'address',
     'phone_number',
   ];

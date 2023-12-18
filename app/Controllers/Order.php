@@ -92,8 +92,7 @@ class Order extends BaseController
     $validation = \Config\Services::validation();
     $validation->setRules([
       'recipient' => 'required',
-      'total_amount' => 'required|numeric',
-      'sender_name' => 'required',
+      'sender' => 'required',
     ]);
 
     if (!$validation->run($data)) {
@@ -102,6 +101,8 @@ class Order extends BaseController
         'error' => $validation->getErrors(),
       ]);
     }
+
+    $data['total_amount'] = 5000; // hardcode total_amount
 
     $order = $this->orderModel->insert($data);
 
