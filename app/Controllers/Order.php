@@ -53,12 +53,12 @@ class Order extends BaseController
 
     if (!$order) {
       return $this->response->setStatusCode(404)->setJSON([
-        'error' => 'Order ID ' . $id . ' not found',
+        'message' => 'Order ID ' . $id . ' not found',
       ]);
     }
 
     $data = [
-      'title' => 'Order Detail | Drinks Store',
+      'message' => 'success',
       'data' => $order,
     ];
 
@@ -70,11 +70,13 @@ class Order extends BaseController
     $order = $this->orderModel->find($id);
 
     if (!$order) {
-      throw new \CodeIgniter\Exceptions\PageNotFoundException('Order ID ' . $id . ' not found!');
+      return $this->response->setStatusCode(404)->setJSON([
+        'message' => 'Order ID ' . $id . ' not found',
+      ]);
     }
 
     $data = [
-      'title' => 'Order Detail | Drinks Store',
+      'message' => 'success',
       'data' => [
         'status' => $order['status'],
       ],

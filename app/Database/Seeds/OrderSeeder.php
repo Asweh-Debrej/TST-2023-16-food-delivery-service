@@ -11,26 +11,26 @@ class OrderSeeder extends Seeder
   {
     $data = [
       [
-        'customer_name' => 'Alice Johnson',
-        'total_amount'  => '150.75',
+        'recipient' => 'Alice Johnson',
+        'total_amount'  => '5000',
         'created_at'    => Time::now(),
         'sender_name'   => 'JANJI JIWA'
       ],
       [
-        'customer_name' => 'Bob Smith',
-        'total_amount'  => '200.50',
+        'recipient' => 'Bob Smith',
+        'total_amount'  => '5000',
         'created_at'    => Time::now(),
         'sender_name'   => 'JANJI JIWA'
       ],
       [
-        'customer_name' => 'Charlie Brown',
-        'total_amount'  => '75.25',
+        'recipient' => 'Charlie Brown',
+        'total_amount'  => '5000',
         'created_at'    => Time::now(),
         'sender_name'   => 'JANJI JIWA'
       ],
       [
-        'customer_name' => 'David Miller',
-        'total_amount'  => '120.00',
+        'recipient' => 'David Miller',
+        'total_amount'  => '5000',
         'created_at'    => Time::now(),
         'sender_name'   => 'JANJI JIWA'
       ],

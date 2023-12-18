@@ -15,7 +15,7 @@ class Order extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
-            'customer_name' => [
+            'recipient' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],

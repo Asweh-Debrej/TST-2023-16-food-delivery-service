@@ -22,7 +22,7 @@
             <?php foreach ($order as $o) : ?>
               <tr>
                 <td><?= $o['id']; ?></td>
-                <td><?= $o['customer_name']; ?></td>
+                <td><?= $o['recipient']; ?></td>
                 <td>Rp.<?= $o['total_amount']; ?></td>
                 <td><?= $o['status']; ?></td>
                 <td>

@@ -12,8 +12,8 @@
           <h5 class="card-text">Staff:</h5>
           <p class="card-text"><?= $order['staff'] ?? 'Unassigned'; ?></p>
 
-          <h5 class="card-text">Customer Name:</h5>
-          <p class="card-text"><?= $order['customer_name']; ?></p>
+          <h5 class="card-text">Recipient:</h5>
+          <p class="card-text"><?= $order['recipient']; ?></p>
 
           <h5 class="card-text">Total Amount:</h5>
           <p class="card-text">Rp.<?= $order['total_amount']; ?></p>

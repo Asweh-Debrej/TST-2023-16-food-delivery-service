@@ -10,7 +10,7 @@ class OrderModel extends Model {
   protected $afterFind = ['afterFindHandler'];
 
   protected $allowedFields = [
-    'customer_name',
+    'recipient',
     'total_amount',
     'sender_name',
   ];
