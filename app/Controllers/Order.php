@@ -49,11 +49,24 @@ class Order extends BaseController
 
   public function apiGetSingle($id)
   {
+    if (!auth()->loggedIn()) {
+      return $this->response->setStatusCode(401)->setJSON([
+        'message' => 'You are not logged in',
+      ]);
+    }
+
+    $userId = user_id();
     $order = $this->orderModel->find($id);
 
     if (!$order) {
       return $this->response->setStatusCode(404)->setJSON([
         'message' => 'Order ID ' . $id . ' not found',
+      ]);
+    }
+
+    if ($order['user_id'] !== $userId) {
+      return $this->response->setStatusCode(403)->setJSON([
+        'message' => 'You are not authorized to access this order',
       ]);
     }
 
@@ -67,11 +80,24 @@ class Order extends BaseController
 
   public function apiGetStatus($id)
   {
+    if (!auth()->loggedIn()) {
+      return $this->response->setStatusCode(401)->setJSON([
+        'message' => 'You are not logged in',
+      ]);
+    }
+
+    $userId = user_id();
     $order = $this->orderModel->find($id);
 
     if (!$order) {
       return $this->response->setStatusCode(404)->setJSON([
         'message' => 'Order ID ' . $id . ' not found',
+      ]);
+    }
+
+    if ($order['user_id'] !== $userId) {
+      return $this->response->setStatusCode(403)->setJSON([
+        'message' => 'You are not authorized to access this order',
       ]);
     }
 
@@ -87,6 +113,13 @@ class Order extends BaseController
 
   public function apiCreate()
   {
+    if (!auth()->loggedIn()) {
+      return $this->response->setStatusCode(401)->setJSON([
+        'message' => 'You are not logged in',
+      ]);
+    }
+
+    $userId = user_id();
     $data = $this->request->getJSON(true);
 
     $validation = \Config\Services::validation();
@@ -105,6 +138,7 @@ class Order extends BaseController
     }
 
     $data['total_amount'] = 5000; // hardcode total_amount
+    $data['user_id'] = $userId;
 
     $orderId = $this->orderModel->store($data);
     $order = $this->orderModel->find($orderId);

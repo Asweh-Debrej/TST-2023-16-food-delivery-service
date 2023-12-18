@@ -15,6 +15,7 @@ class OrderModel extends Model {
     'sender',
     'address',
     'phone_number',
+    'user_id',
   ];
 
   public function getDelivery() {

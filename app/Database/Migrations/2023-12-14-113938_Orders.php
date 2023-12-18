@@ -43,9 +43,16 @@ class Order extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 100,
             ],
+            'user_id' => [
+                'type' => 'INT',
+                'constraint' => 5,
+                'unsigned' => true,
+                'null' => true,
+            ],
         ]);
 
         $this->forge->addKey('id', true);
+        $this->forge->addForeignKey('user_id', 'users', 'id', 'SET NULL', 'SET NULL');
         $this->forge->createTable('orders');
     }
 

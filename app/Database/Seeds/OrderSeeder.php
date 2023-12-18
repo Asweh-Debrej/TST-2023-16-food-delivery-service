@@ -17,6 +17,7 @@ class OrderSeeder extends Seeder
         'sender'   => 'JANJI JIWA',
         'address'       => 'Jl. Jalan No. 1',
         'phone_number'  => '081234567890',
+        'user_id' => null,
       ],
       [
         'recipient' => 'Bob Smith',
@@ -25,6 +26,7 @@ class OrderSeeder extends Seeder
         'sender'   => 'JANJI JIWA',
         'address'       => 'Jl. Jalan No. 2',
         'phone_number'  => '081234567890',
+        'user_id' => null,
       ],
       [
         'recipient' => 'Charlie Brown',
@@ -33,6 +35,7 @@ class OrderSeeder extends Seeder
         'sender'   => 'JANJI JIWA',
         'address'       => 'Jl. Jalan No. 3',
         'phone_number'  => '081234567890',
+        'user_id' => null,
       ],
       [
         'recipient' => 'David Miller',
@@ -41,6 +44,7 @@ class OrderSeeder extends Seeder
         'sender'   => 'JANJI JIWA',
         'address'       => 'Jl. Jalan No. 4',
         'phone_number'  => '081234567890',
+        'user_id' => null,
       ],
     ];
 

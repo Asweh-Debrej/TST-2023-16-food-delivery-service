@@ -20,3 +20,7 @@ $routes->post('/assignment', 'OrderAssignment::create', ['as' => 'assignment.cre
 $routes->get('/api/order/(:num)', 'Order::apiGetSingle/$1', ['as' => 'api.order.single']);
 $routes->get('/api/order/(:num)/status', 'Order::apiGetStatus/$1', ['as' => 'api.order.status']);
 $routes->post('/api/order', 'Order::apiCreate', ['as' => 'api.order.create']);
+
+
+$routes->post('/api/auth/token', 'Auth::token', ['as' => 'auth.token']);
+$routes->get('/api/auth/info', 'Auth::info', ['as' => 'auth.info']);
