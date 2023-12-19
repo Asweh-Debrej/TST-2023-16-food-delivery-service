@@ -30,7 +30,7 @@ class Database extends Config
         'username'     => 'vbbeorznzz',
         'password'     => 'D70JCF57X814K024$',
         'database'     => 'tst-delivery-store-database',
-        'DBDriver'     => 'MYSQLI_CLIENT_SSL',
+        'DBDriver'     => 'MYSQLI',
         'DBPrefix'     => '',
         'pConnect'     => false,
         'DBDebug'      => true,
