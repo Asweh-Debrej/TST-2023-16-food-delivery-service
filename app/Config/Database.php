@@ -30,7 +30,7 @@ class Database extends Config
         'username'     => '',
         'password'     => '',
         'database'     => '',
-        'DBDriver'     => env('database_default_DBDriver', 'Aanbieder'),
+        'DBDriver'     => 'AAN',
         'DBPrefix'     => '',
         'pConnect'     => false,
         'DBDebug'      => true,
