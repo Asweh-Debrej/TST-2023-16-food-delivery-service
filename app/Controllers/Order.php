@@ -64,9 +64,15 @@ class Order extends BaseController
       ]);
     }
 
+    if (!isset($order['user_id'])) {
+      return $this->response->setStatusCode(404)->setJSON([
+        'message' => 'Order ID ' . $id . ' not found',
+      ]);
+    }
     if ($order['user_id'] !== $userId) {
       return $this->response->setStatusCode(403)->setJSON([
         'message' => 'You are not authorized to access this order',
+        'data' => $order['user_id'] . ' ' . $userId,
       ]);
     }
 
