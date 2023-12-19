@@ -26,11 +26,11 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => 'localhost',
-        'username'     => '',
-        'password'     => '',
-        'database'     => '',
-        'DBDriver'     => 'AAN',
+        'hostname'     => 'tst-tubes-delivery-server.mysql.database.azure.com',
+        'username'     => 'vbbeorznzz',
+        'password'     => 'D70JCF57X814K024$',
+        'database'     => 'tst-delivery-store-database',
+        'DBDriver'     => 'MYSQLI_CLIENT_SSL',
         'DBPrefix'     => '',
         'pConnect'     => false,
         'DBDebug'      => true,
