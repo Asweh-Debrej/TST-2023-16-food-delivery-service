@@ -24,3 +24,9 @@ $routes->post('/api/order', 'Order::apiCreate', ['as' => 'api.order.create', 'fi
 
 $routes->post('/api/auth/token', 'Auth::token', ['as' => 'auth.token']);
 $routes->get('/api/auth/info', 'Auth::info', ['as' => 'auth.info', 'filter' => 'tokens']);
+
+
+// health
+$routes->get('/health', function () {
+  return 'OK';
+});
