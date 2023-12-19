@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => env('AZURE_MYSQL_HOSTNAME'),
-        'username'     => env('AZURE_MYSQL_USERNAME'),
-        'password'     => env('AZURE_MYSQL_PASSWORD'),
-        'database'     => env('AZURE_MYSQL_DBNAME'),
+        'hostname'     => 'localhost',
+        'username'     => '',
+        'password'     => '',
+        'database'     => '',
         'DBDriver'     => 'MySQLi',
         'DBPrefix'     => '',
         'pConnect'     => false,
@@ -41,7 +41,7 @@ class Database extends Config
         'compress'     => false,
         'strictOn'     => false,
         'failover'     => [],
-        'port'         => env('AZURE_MYSQL_PORT'),
+        'port'         => 3306,
         'numberNative' => false,
     ];
 
