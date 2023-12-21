@@ -26,7 +26,5 @@ $routes->post('/api/auth/token', 'Auth::token', ['as' => 'auth.token']);
 $routes->get('/api/auth/info', 'Auth::info', ['as' => 'auth.info', 'filter' => 'tokens']);
 
 
-// health
-$routes->get('/health', function () {
-  return 'OK';
-});
+// health return 200
+$routes->get('/health', 'Health::index', ['as' => 'health']);
